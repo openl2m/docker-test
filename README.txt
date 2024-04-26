@@ -17,7 +17,7 @@ Requirements:
 Test Setup Steps:
 -----------------
 
-1 - clone the docker compose config. We do in the directory "/opt/openl2m-docker-test/". Change as needed.
+1 - clone the docker compose config. We use the directory "/opt/openl2m-docker-test/". Change as needed.
 
         mkdir -p /opt/openl2m-docker-test
         cd /opt/openl2m-docker-test
