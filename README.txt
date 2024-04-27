@@ -10,8 +10,8 @@ Below are steps that appear to work, with some additional testing hints...
 
 Requirements:
     - a working docker host.
-    - rights to create new containers.
-    - working knowledge of using docker with compose.
+    - rights to "sudo" or otherwize run docker, create new containers, etc.
+    - some working knowledge of using docker with compose.
     - git installed.
 
 Test Setup Steps:
@@ -19,9 +19,9 @@ Test Setup Steps:
 
 1 - clone the docker compose config. We use the directory "/opt/openl2m-docker-test/". Change as needed.
 
-        mkdir -p /opt/openl2m-docker-test
+        sudo mkdir -p /opt/openl2m-docker-test
         cd /opt/openl2m-docker-test
-        git clone https://github.com/openl2m/docker-test .
+        sudo git clone https://github.com/openl2m/docker-test .
 
 2 - Run docker:
 
@@ -70,7 +70,7 @@ Other Docker Things:
 --------------------
 *NOTE*: Docker is a rich container environment, and showing all options is beyond the scope of this README.txt!
 
-* if you want to test a specific testing branch of the code, you can start it as such:
+* if you want to test a specific testing branch of OpenL2M, you can start it as such:
 
     sudo BRANCH=<branch-name> docker compose up
 
