@@ -2,7 +2,8 @@
 # OpenL2M Docker TEST Setup #
 #############################
 
-This directory contains the files to build a TEST instance of OpenL2M in a docker container, using "docker compose"
+This directory contains the files to build a TEST instance of OpenL2M in a docker container,
+using "docker compose"
 
 Note: you do NOT need to create a local git clone of the OpenL2M source code for this!
 
@@ -17,7 +18,8 @@ Requirements:
 Test Setup Steps:
 -----------------
 
-1 - clone the docker compose config. We use the directory "/opt/openl2m-docker-test/". Change as needed.
+1 - clone the docker compose config. We use the directory "/opt/openl2m-docker-test/".
+    Change as needed.
 
         sudo mkdir -p /opt/openl2m-docker-test
         cd /opt/openl2m-docker-test
@@ -27,7 +29,12 @@ Test Setup Steps:
 
         sudo docker compose up
 
-    This will take a while. It pulls images from docker repositories, downloads OpenL2M and then builds the application.
+    This will take a while. It pulls images from docker repositories, downloads OpenL2M
+    and then builds the application.
+
+    Note: this will map the test version of OpenL2M to port 8000 on your Docker host.
+    If you need to use a different port, please see the file "compose.override.example.yaml"
+
     If you get something like this, things are running:
 
         openl2m-1   |   Applying ...
@@ -37,7 +44,8 @@ Test Setup Steps:
         openl2m-1   | Performing system checks...
         <a few other lines...>
 
-    Test from a browser, to "http://<your-host-ip>:8000/". If you get the login screen, things are running!
+    Test from a browser, to "http://<your-host-ip>:8000/". If you get the login screen,
+    things are running!
 
     Now hit Control-C, and run the containers as a daemon:
 
@@ -68,7 +76,8 @@ NOTE: this includes the documentation on the web site...
 
 Other Docker Things:
 --------------------
-*NOTE*: Docker is a rich container environment, and showing all options is beyond the scope of this README.txt!
+*NOTE*: Docker is a rich container environment, and showing all options is beyond the scope
+of this README.txt!
 
 * if you want to test a specific testing branch of OpenL2M, you can start it as such:
 
@@ -93,6 +102,7 @@ Next run this to restart the containers:
   if you really want to cleanup everything (make sure you know what this does!):
 
     sudo docker system prune -a
+
 
 Debugging and Editing INSIDE The Docker Image
 ---------------------------------------------

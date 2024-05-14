@@ -40,6 +40,8 @@ services:
       - DB_HOST=postgres
       - DEBUG=$DEBUG
       - BRANCH=$BRANCH
+      # so we can sense easily that we are running in container:
+      - IN_CONTAINER=1
     depends_on:
       postgres:
         condition: service_healthy

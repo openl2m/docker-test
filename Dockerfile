@@ -39,5 +39,5 @@ RUN pip3.11 install -r requirements.txt
 ADD entrypoint.sh /opt/openl2m
 RUN chmod +x /opt/openl2m/entrypoint.sh
 
-# and tell the contain what to run at boot
+# and tell the container what to run at boot
 ENTRYPOINT ["/opt/openl2m/entrypoint.sh"]

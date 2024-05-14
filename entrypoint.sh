@@ -44,7 +44,7 @@ echo "Checking out '$BRANCH' code branch..."
 git checkout $BRANCH
 
 echo "Running OpenL2M Database updates..."
-$PYTHON3 openl2m/manage.py migrate
+$PYTHON3 openl2m/manage.py migrate --no-input
 
 # Recompile the documentation, these become Django static files!
 echo "Updating HTML documentation..."
@@ -55,7 +55,6 @@ cd ..
 
 echo "Collecting static files..."
 $PYTHON3 openl2m/manage.py collectstatic --no-input
-eval $COMMAND || exit 1
 
 echo "Removing stale content types..."
 $PYTHON3 openl2m/manage.py remove_stale_contenttypes --no-input
