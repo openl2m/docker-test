@@ -49,7 +49,6 @@ $PYTHON3 openl2m/manage.py migrate --no-input
 # Recompile the documentation, these become Django static files!
 echo "Updating HTML documentation..."
 cd docs
-make clean
 make html
 cd ..
 

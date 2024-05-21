@@ -11,22 +11,17 @@ services:
     # NOTE: this has to be done before the first time bringing up the containers!
     environment:
       - POSTGRES_PASSWORD=changeme
-      - POSTGRES_USER=openl2m
-      - POSTGRES_DB=openl2m
 
   openl2m:
     # if you want to use a different public port you can map that here, e.g. 8100
     # map host port 8080 to internal container port 8000 (where django dev web server is running)
     # uncomment the following two lines:
-    #ports:
-    #  - 8100:8000
+    ports:
+      - 8000:8000
 
-    # change the database username and password, if changed above:
     environment:
+      # change the database password, if changed above:
       - DB_PASS=changeme
-      - DB_USER=openl2m
-      - DB_NAME=openl2m
-    # you can "hardcode" debug and git branch settings here,
-    # instead of using environment variables:
-    #  - DEBUG=$DEBUG
-    #  - BRANCH=$BRANCH
+      # you can "hardcode" debug and git branch settings here:
+      - DEBUG=False
+      - BRANCH=main

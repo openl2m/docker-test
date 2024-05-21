@@ -17,7 +17,6 @@ services:
     volumes:
       - postgres_data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_PASSWORD=changeme
       - POSTGRES_USER=openl2m
       - POSTGRES_DB=openl2m
     healthcheck:
@@ -30,16 +29,10 @@ services:
     image: openl2m:test-build
     build:
       dockerfile: ./Dockerfile
-    # map host port 8000 to internal container port 8000
-    ports:
-      - 8000:8000
     environment:
-      - DB_PASS=changeme
       - DB_USER=openl2m
       - DB_NAME=openl2m
       - DB_HOST=postgres
-      - DEBUG=$DEBUG
-      - BRANCH=$BRANCH
       # so we can sense easily that we are running in container:
       - IN_CONTAINER=1
     depends_on:
