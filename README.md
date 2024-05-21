@@ -32,20 +32,20 @@ Requirements:
         cp compose.override.example.yaml compose.override.yaml
 ```
 
-    and edit this file, if you need to change passwords or public ports.
+and edit this file, if you need to change passwords or public ports.
 
 3 - Run docker:
 ```
         sudo docker compose up
 ```
 
-    This will take a while. It pulls images from docker repositories, downloads OpenL2M
-    and then builds the application.
+This will take a while. It pulls images from docker repositories, downloads OpenL2M
+and then builds the application.
 
-    Note: this will map the test version of OpenL2M to port 8000 on your Docker host.
-    If you need to use a different port, please see the file "compose.override.example.yaml"
+Note: this will map the test version of OpenL2M to port 8000 on your Docker host.
+If you need to use a different port, please see the file "compose.override.example.yaml"
 
-    If you get something like this, things are running:
+If you get something like this, things are running:
 ```
         openl2m-1   |   Applying ...
         openl2m-1   | Updating Wireshark Ethernet database...
@@ -54,10 +54,11 @@ Requirements:
         openl2m-1   | Performing system checks...
         <a few other lines...>
 ```
-    Test from a browser, to "http://<your-host-ip>:8000/". If you get the login screen,
-    things are running!
 
-    Now hit Control-C, and run the containers as a daemon:
+Test from a browser, to "http://<your-host-ip>:8000/". If you get the login screen,
+things are running!
+
+Now hit Control-C, and run the containers as a daemon:
 ```
         sudo docker compose up -d
 ```
@@ -67,11 +68,12 @@ Requirements:
         sudo docker exec -ti openl2m-testing-openl2m-1 bash
 ```
 
-    In this new shell, run:
+In this new shell, run:
 ```
         python3.11 openl2m/manage.py createsuperuser
 ```
-    follow the prompts, and when done:
+
+follow the prompts, and when done:
 ```
         exit
 ```
@@ -114,7 +116,7 @@ Next run this to restart the containers:
     sudo docker volume rm openl2m-testing_postgres_data
 ```
 
-  If you really want to cleanup everything (make sure you know what this does!):
+If you really want to cleanup everything (make sure you know what this does!):
 ```
     sudo docker system prune -a
 ```
